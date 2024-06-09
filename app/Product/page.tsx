@@ -11,6 +11,13 @@ export default async function page() {
       <Link href={"/"} className="border p-1 w-fit">
         home
       </Link>
+
+{/* animation */}
+
+
+
+
+
       <ProductList product={data}/>
     </div>
   );
