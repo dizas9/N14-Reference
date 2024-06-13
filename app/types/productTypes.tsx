@@ -2,7 +2,6 @@
   category: string;
   image: string;
   productName: string;
-  productDescription: string;
   price:string;
   id:string;
 }

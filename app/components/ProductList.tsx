@@ -11,6 +11,8 @@ export default function ProductList({ product }: ProductProps) {
     },
   }));
 
+
+
   useEffect(() => {
     api.start({
       from: { x: 0 },
@@ -18,21 +20,17 @@ export default function ProductList({ product }: ProductProps) {
     });
   }, []);
 
-
   return (
     <>
       <animated.div
         className="flex w-2/3 flex-wrap"
-        style={{
-          ...spring,
-        }}
+        style={{...spring}}
       >
         {product.map((item, idx) => (
           <div className="w-1/4 border" key={idx}>
             <p className="">{item.productName}</p>
             <p className="">{item.price}</p>
             <p className="">{item.category}</p>
-            <p className="">{item.productDescription}</p>
           </div>
         ))}
       </animated.div>

@@ -1,17 +1,16 @@
+"use client";
 import Link from "next/link";
-import FetchData from "./libs/FetchData";
 
-
-export default async function Home() {
-
- 
+export default function Home() {
   return (
-   <div className="flex flex-col">
-    helo
+    <div className="flex  gap-2">
+      <Link href={"/Product"} className="border p-1 w-fit">
+        Product
+      </Link>
 
-    <Link href={"/Product"} className="border p-1 w-fit">
-    Product
-    </Link>
-   </div>
+      <Link href={"/ServerAction"} className="border p-1 w-fit">
+       Server
+      </Link>
+    </div>
   );
 }

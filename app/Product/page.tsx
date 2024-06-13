@@ -1,23 +1,14 @@
 import Link from 'next/link';
 import FetchData from '../libs/FetchData';
 import ProductList from '../components/ProductList';
+import HomeButton from '../components/HomeButton';
 
 
 export default async function page() {
      const data = await FetchData();
-     console.log(data);
   return (
     <div>
-      <Link href={"/"} className="border p-1 w-fit">
-        home
-      </Link>
-
-{/* animation */}
-
-
-
-
-
+     <HomeButton/>
       <ProductList product={data}/>
     </div>
   );
