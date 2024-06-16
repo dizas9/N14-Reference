@@ -1,53 +1,17 @@
-import { revalidateTag } from "next/cache";
-import HomeButton from "../components/HomeButton";
-import ProductList from "../components/ProductList";
-import FetchData from "../libs/FetchData";
+import HomeButton from "../../components/HomeButton";
+import ProductList from "../../components/ProductList";
+import FetchData from "@/libs/FetchData";
+import { AddProductHandler } from "@/actions/AddProduct";
+import ClientAction from "../ClientAction/page";
 
 export default async function ServerAction() {
-//   const products = await fetch(
-//     "https://mockapi.io/projects/66655ef3d122c2868e40777a",
-//     {
-//       cache: "no-cache",
-//       next: {
-//         tags: ["products"],
-//       },
-//     }
-//   );
-
   const data = await FetchData();
 
-  // server action function
-  const Add = async (e: FormData) => {
-    "use server";
-    const productName = e.get("productName")?.toString();
-    const price = e.get("price")?.toString();
-    const category = e.get("category")?.toString();
-
-    const response = await fetch(
-      "https://66655ef3d122c2868e407779.mockapi.io/api/products/products",
-      {
-        method: "POST",
-        body: JSON.stringify({
-          productName,
-          price,
-          category,
-        }),
-        headers: {
-          "content-type": "application/json",
-        },
-      }
-    );
-
-    console.log(response);
-    revalidateTag("products")
-  };
   return (
     <div>
       <HomeButton />
 
-      {/* Server Action form */}
-
-      <form action={Add} className="text-black">
+      <form action={AddProductHandler} className="text-black">
         <div className="">
           <input
             type="text"
@@ -64,12 +28,16 @@ export default async function ServerAction() {
           <input type="text" name="category" placeholder="Enter category" />
         </div>
 
-        
-
         <button className="bg-green-800 px-2 py-0.5 shadow-[red] shadow-2xl">
           Add{" "}
         </button>
       </form>
+
+      {/* client form */}
+
+      <h1>Client form</h1>
+
+      <ClientAction />
 
       {/* Product list */}
       <ProductList product={data} />

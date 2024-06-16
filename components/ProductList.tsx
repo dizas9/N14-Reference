@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect } from "react";
-import { ProductProps } from "../types/productTypes";
+import { ProductProps } from "../app/types/productTypes";
 import { animated, useSpring } from "@react-spring/web";
 
 export default function ProductList({ product }: ProductProps) {
@@ -10,8 +10,6 @@ export default function ProductList({ product }: ProductProps) {
       x: 0,
     },
   }));
-
-
 
   useEffect(() => {
     api.start({
@@ -22,10 +20,7 @@ export default function ProductList({ product }: ProductProps) {
 
   return (
     <>
-      <animated.div
-        className="flex w-2/3 flex-wrap"
-        style={{...spring}}
-      >
+      <animated.div className="flex w-2/3 flex-wrap" style={{ ...spring }}>
         {product.map((item, idx) => (
           <div className="w-1/4 border" key={idx}>
             <p className="">{item.productName}</p>
