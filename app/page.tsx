@@ -9,7 +9,11 @@ export default function Home() {
       </Link>
 
       <Link href={"/ServerAction"} className="border p-1 w-fit">
-       Server
+        Server
+      </Link>
+
+      <Link href={"/ReduxRTK"} className="border p-1 w-fit">
+        RTK
       </Link>
     </div>
   );
