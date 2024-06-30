@@ -15,6 +15,10 @@ export default function Home() {
       <Link href={"/ReduxRTK"} className="border p-1 w-fit">
         RTK
       </Link>
+
+      <Link href={"/Context"} className="border p-1 w-fit">
+        ContextAPI
+      </Link>
     </div>
   );
 }
