@@ -2,10 +2,12 @@
 
 import { configureStore } from "@reduxjs/toolkit";
 import ChangeColorReducer from "./colorChange";
+import UserReducer from "./userRegister";
 
 const store = configureStore({
   reducer: {
     ChangeColor: ChangeColorReducer,
+    User : UserReducer,
   },
 });
 

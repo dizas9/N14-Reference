@@ -7,7 +7,7 @@ const initialState = {
 };
 
 export const ChangeColor = createSlice({
-  name: "ChangeColor",
+  name: "ChangeColorSlice",
   initialState,
   reducers: {
     renderColor(state) {
