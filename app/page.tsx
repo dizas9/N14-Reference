@@ -19,6 +19,10 @@ export default function Home() {
       <Link href={"/Context"} className="border p-1 w-fit">
         ContextAPI
       </Link>
+
+      <Link href={"/Todo"} className="border p-1 w-fit">
+        Todo App
+      </Link>
     </div>
   );
 }

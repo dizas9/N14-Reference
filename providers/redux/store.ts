@@ -3,11 +3,13 @@
 import { configureStore } from "@reduxjs/toolkit";
 import ChangeColorReducer from "./colorChange";
 import UserReducer from "./userRegister";
+import ToDoReducer from "./Todo";
 
 const store = configureStore({
   reducer: {
     ChangeColor: ChangeColorReducer,
     User : UserReducer,
+    ToDo: ToDoReducer,
   },
 });
 
